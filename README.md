@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Vibe-Coding-Methodology
 
 更新时间: 2026-03-01
@@ -142,3 +143,6 @@ Step 5: 验证与回写
    - 生成一个 full pack
    - 校验 + 实施 + scope 检查 + 验证 + 回写
 4. 通过后再把 `/pack:*` 映射为你常用 Agent 的 prompt 命令
+=======
+"# Vibe-Coding-Methodology" 
+>>>>>>> 042a2171b29847e6f7748a08265728bd4cb0ef22
