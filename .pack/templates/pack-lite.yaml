@@ -1,0 +1,20 @@
+pack_id: CHG-001-task
+spec_ref: docs/specs/module/feature.spec.md
+change_ref: openspec/changes/change-name
+goal: One concise sentence about what must be done.
+scope:
+  files:
+    - src/example/file.ts
+constraints:
+  must:
+    - Only edit files in scope.
+  must_not:
+    - Do not change public interfaces.
+verification_commands:
+  - npm test -- example
+rollback_plan:
+  - Revert the commit for this task.
+output_required:
+  - git_diff
+  - regression_checklist
+  - risks

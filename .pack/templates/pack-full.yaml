@@ -1,0 +1,55 @@
+pack_id: CHG-001-task
+spec_ref: docs/specs/module/feature.spec.md
+change_ref: openspec/changes/change-name
+task_ref: T012
+
+goal: Fix duplicate submit and preserve analytics behavior.
+
+scope:
+  files:
+    - src/pages/Cart/SubmitButton.tsx
+    - src/utils/analytics.ts
+
+constraints:
+  must:
+    - Only edit files in scope.
+    - Provide readable diff with rationale.
+  must_not:
+    - Do not change public interfaces.
+    - Do not refactor unrelated modules.
+
+ac:
+  - id: AC-1
+    trigger: loading state
+    expected: submit button is disabled and cannot be clicked
+  - id: AC-2
+    trigger: rapid double click
+    expected: only one effective checkout request is sent
+
+ui_facts:
+  - state: default
+    value: bg=#1890FF radius=6px
+  - state: loading
+    value: bg=#D9D9D9 text='Processing...' pointer-events=none
+
+tech_facts:
+  - source: docs/api/analytics.md
+    snippet: trackEvent(eventName: string, payload: Record<string, any>)
+
+runtime_evidence:
+  - source: browser-network
+    detail: second checkout request returns 409 Conflict on rapid double click
+
+verification_commands:
+  - npm run test -- submit-button
+  - npm run lint
+
+rollback_plan:
+  - Revert this pack commit.
+  - Restore previous button submit behavior.
+
+output_required:
+  - constraints_summary
+  - git_diff
+  - regression_checklist
+  - risks
