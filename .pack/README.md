@@ -20,3 +20,21 @@ This folder defines a `pack` execution layer that can be used together with Open
 - `commands/`: command behavior docs
 
 Use `scripts/pack/*.py` for local automation.
+
+## Unified Entrypoint
+
+You can route all `/pack:*` commands to one script:
+
+- `py -3 scripts/pack/pack_dispatch.py`
+
+Detailed command mapping is in:
+
+- `.pack/COMMAND_MAPPING.md`
+
+One-click setup script:
+
+- `scripts/pack/setup_pack_openspec.cmd`
+
+Agent compatibility guide:
+
+- `.pack/AGENT_COMPAT.md`

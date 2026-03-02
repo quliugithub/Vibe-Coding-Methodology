@@ -34,7 +34,7 @@ ui_facts:
 
 tech_facts:
   - source: docs/api/analytics.md
-    snippet: trackEvent(eventName: string, payload: Record<string, any>)
+    snippet: "trackEvent(eventName: string, payload: Record<string, any>)"
 
 runtime_evidence:
   - source: browser-network

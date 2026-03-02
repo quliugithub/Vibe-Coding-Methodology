@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Vibe-Coding-Methodology
 
 更新时间: 2026-03-01
@@ -143,6 +142,23 @@ Step 5: 验证与回写
    - 生成一个 full pack
    - 校验 + 实施 + scope 检查 + 验证 + 回写
 4. 通过后再把 `/pack:*` 映射为你常用 Agent 的 prompt 命令
-=======
-"# Vibe-Coding-Methodology" 
->>>>>>> 042a2171b29847e6f7748a08265728bd4cb0ef22
+
+## 一键安装与多 Agent 兼容
+
+可直接一键初始化：
+
+```powershell
+.\scripts\pack\setup_pack_openspec.cmd -AgentTargets auto
+```
+
+常用参数：
+- `-AgentTargets auto`：自动检测仓库已有 Agent 目录并安装 pack 工作流
+- `-AgentTargets all`：一次安装 codex/cursor/cline/continue/windsurf
+- `-AgentTargets codex,cursor`：只安装指定 Agent
+
+安装后统一入口：
+- `.\openspecx.cmd ...`
+- `.\pack.cmd ...`
+
+更多说明见：
+- `.pack/AGENT_COMPAT.md`
